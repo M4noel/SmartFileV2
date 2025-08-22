@@ -1,6 +1,12 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+  "version": 2,
+  "builds": [
+    { "src": "api/*.js", "use": "@vercel/node" },
+    { "src": "package.json", "use": "@vercel/static-build" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ],
   "headers": [
     {
@@ -30,10 +36,8 @@
       ]
     }
   ],
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "@vercel/node@18"
-    }
+  "env": {
+    "NODE_ENV": "production"
   }
 }
 

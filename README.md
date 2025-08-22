@@ -19,7 +19,8 @@ npm install
 cp env.example .env
 
 # Editar .env com suas configurações
-# VITE_API_BASE_URL=http://localhost:3000 (desenvolvimento)
+# As variáveis de ambiente já estão configuradas com valores padrão
+# VITE_API_BASE_URL=${VITE_API_PROTOCOL:-http}://${HOST:-localhost}:${PORT:-3000}
 ```
 
 ### 2. Build Local
