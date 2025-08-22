@@ -7,13 +7,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Arquivos de ambiente
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
 node_modules
 .DS_Store
 dist
@@ -35,7 +28,3 @@ coverage
 *.sw?
 
 *.tsbuildinfo
-
-# Arquivos temporários
-temp/
-.vercel

@@ -37,9 +37,8 @@ app.get('/health', (req, res) => {
 // Iniciar o servidor apenas em ambiente de desenvolvimento
 if (process.env.NODE_ENV !== 'production') {
   const port = process.env.PORT || 3000;
-  const host = process.env.HOST || 'localhost';
-  app.listen(port, host, () => {
-    console.log(`Servidor rodando em http://${host}:${port}`);
+  app.listen(port, () => {
+    console.log(`Servidor rodando em http://localhost:${port}`);
   });
 }
 

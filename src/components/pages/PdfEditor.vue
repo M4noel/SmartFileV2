@@ -445,9 +445,9 @@ async function processPdf() {
       formData.append('watermarkImage', watermarkImageFile.value);
     }
 
-    // 🚀 Mande para o backend real
+    // 🚀 Mande para o backend real (troque a porta se necessário)
     const response = await axios.post(
-      import.meta.env.VITE_API_BASE_URL + '/api/edit-pdf', // Usando variável de ambiente
+      'http://localhost:3000/api/edit-pdf', // OU '/api/edit-pdf' se tiver proxy no Vite
       formData,
       {
         responseType: 'blob',
