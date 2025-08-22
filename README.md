@@ -1,8 +1,8 @@
-# SmartFiles Frontend
+# SmartFiles 
 
 Frontend da aplicação SmartFiles - Ferramentas Inteligentes Online para PDF, imagens e documentos.
 
-## 🚀 Deploy na Vercel
+## 🚀 
 
 ### Pré-requisitos
 - Node.js 20.19.0 ou superior
