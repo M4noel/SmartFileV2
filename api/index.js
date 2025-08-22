@@ -1,4 +1,4 @@
-// Este arquivo serve como ponto de entrada para a aplicação
+// Este arquivo serve como ponto de entrada para a aplicação serverless na Vercel
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
@@ -13,7 +13,6 @@ dotenv.config();
 
 // Configuração do Express
 const app = express();
-const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
@@ -28,19 +27,20 @@ const upload = multer({
 });
 
 // Rotas da API
-app.use('/api', apiRoutes(upload));
+app.use('/', apiRoutes(upload));
 
 // Rota de verificação de saúde
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok' });
 });
 
-// Iniciar o servidor se não estiver em ambiente serverless
+// Iniciar o servidor apenas em ambiente de desenvolvimento
 if (process.env.NODE_ENV !== 'production') {
+  const port = process.env.PORT || 3000;
   app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
   });
 }
 
-// Exportar a aplicação para uso serverless
+// Exportar a aplicação para uso serverless na Vercel
 export default app;
